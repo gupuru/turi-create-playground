@@ -1,6 +1,6 @@
 import turicreate as tc
-model = tc.load_model('model/recommend.model')
-movie = tc.SFrame.read_csv('data/ml-latest-small/movies.csv')
+model = tc.load_model('../model/recommend.model')
+movie = tc.SFrame.read_csv('../data/ml-latest-small/movies.csv')
 
 print("=== input ===")
 data = tc.SFrame({
