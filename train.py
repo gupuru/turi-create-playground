@@ -6,4 +6,11 @@ training_data, validation_data = tc.recommender.util.random_split_by_user(data, 
 print("#### train #####")
 model = tc.recommender.create(training_data, 'userId', 'movieId')
 
-results = model.recommend()
+print("#### eval #####")
+res = model.evaluate(validation_data)
+
+pro = res['precision_recall_overall']
+pro.print_rows(18,3)
+tc.show(pro['recall'], pro['precision'], 'recall', 'precision')
+
+model.save('model/recommend.model')
