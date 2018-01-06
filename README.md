@@ -4,3 +4,5 @@
 
 - Recommender systems
 - Image classification
+
+Please prepare your own data for learning.
